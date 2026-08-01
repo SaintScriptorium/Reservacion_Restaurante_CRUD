@@ -18,6 +18,7 @@ function renderTable() {
         `;
     });
 }
+
 document.getElementById('reservationForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const id = document.getElementById('editId').value;
@@ -39,3 +40,14 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     this.reset();
     renderTable();
 });
+
+function editReservation(index) {
+    const res = reservations[index];
+    document.getElementById('name').value = res.name;
+    document.getElementById('date').value = res.date;
+    document.getElementById('time').value = res.time;
+    document.getElementById('guests').value = res.guests;
+    document.getElementById('editId').value = index;
+}
+
+renderTable();
