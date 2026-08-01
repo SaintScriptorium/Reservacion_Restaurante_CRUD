@@ -50,4 +50,10 @@ function editReservation(index) {
     document.getElementById('editId').value = index;
 }
 
+function deleteReservation(index) {
+    reservations.splice(index, 1); 
+    localStorage.setItem('reservations', JSON.stringify(reservations));
+    renderTable();
+}
+
 renderTable();
